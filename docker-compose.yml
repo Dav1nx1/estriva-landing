@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  # https-portal:
+  #   container_name: https
+  #   image: steveltn/https-portal
+  #   volumes:
+  #     - "./data/ssl_certs:/var/lib/https-portal"
+  #   ports:
+  #     - 80:80
+  #     - 443:443
+  #   links:
+  #     - web
+  #   depends_on:
+  #     - web
+  #   environment:
+  #     DOMAINS: "${FULLDOMAIN} -> http://web:80, www.domain.com.uy -> http://web:80"
+  #     STAGE: "development"
+  #     CLIENT_MAX_BODY_SIZE: 0
+  #     #FORCE_RENEW: 'true'
+  web:
+    container_name: estriva
+    build: .
+    restart: always
+    ports:
+      - 3000:3000
+    volumes:
+      - estriva_data:/app
+volumes:
+  estriva_db: {}
+  estriva_data: {}
