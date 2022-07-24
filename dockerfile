@@ -10,7 +10,8 @@ COPY ./ .
 RUN npm install
 
 #build remix app
-RUN npm run build # will build remix app
+# will build remix app
+RUN npm run build
 ENV NODE_ENV=production
 
 CMD ["npm", "run" ,"dev"]

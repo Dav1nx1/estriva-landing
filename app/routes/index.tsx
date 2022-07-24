@@ -6,8 +6,8 @@ const Index = () => {
       <Loading
         image={'./logo.png'}
         title={'We are working for you'}
-        height={200}
-        width={300}
+        height={150}
+        width={150}
       />
     </div>
   );
